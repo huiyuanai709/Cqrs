@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Version>1.0.3</Version>
+        <Nullable>enable</Nullable>
+        <PackageId>huiyuanai709.cqrs</PackageId>
+        <Authors>huiyuanai709</Authors>
+        <PackageTags>CQRS pattern tools</PackageTags>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/huiyuanai709/dotnet-tools</RepositoryUrl>
+        <Description>create directory,commands,queries to implement CQRS pattern</Description>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>cqrs</ToolCommandName>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    </ItemGroup>
+
+</Project>
