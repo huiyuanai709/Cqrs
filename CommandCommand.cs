@@ -21,25 +21,27 @@ public class CommandCommand : Command
         name = name.EndsWith("Command") ? name : $"{name}Command";
         ns = TryGetNamespace(ns);
 
+        var hasReturnType = !string.IsNullOrWhiteSpace(type);
         File.WriteAllText($"{name}.cs", $@"using MediatR;
 namespace {ns}
 {{
-    public class {name} : {(!string.IsNullOrWhiteSpace(type) ? $"IRequest<{type}>" : "IRequest")}
+    public class {name} : {(hasReturnType ? $"IRequest<{type}>" : "IRequest")}
     {{
         
     }}
 }}");
+
         File.WriteAllText($"{name}Handler.cs", $@"using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 
 namespace {ns}
 {{
-    public class {name}Handler : {(!string.IsNullOrWhiteSpace(type) ? $"IRequestHandler<{name}, {type}>" : $"AsyncRequestHandler<{name}>")}
+    public class {name}Handler : {(hasReturnType ? $"IRequestHandler<{name}, {type}>" : $"IRequestHandler<{name}>")}
     {{
-        public async Task{(!string.IsNullOrWhiteSpace(type) ? $"<{type}>" : "")} Handle({name} request, CancellationToken cancellationToken)
+        public async Task{(hasReturnType ? $"<{type}>" : "<Unit>")} Handle({name} request, CancellationToken cancellationToken)
         {{
-            
+            {(hasReturnType ? string.Empty : "Unit.Value")}
         }}
     }}
 }}");
