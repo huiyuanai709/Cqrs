@@ -41,7 +41,7 @@ namespace {ns}
     {{
         public async Task{(hasReturnType ? $"<{type}>" : "<Unit>")} Handle({name} request, CancellationToken cancellationToken)
         {{
-            {(hasReturnType ? string.Empty : "Unit.Value")}
+            {(hasReturnType ? string.Empty : "return Unit.Value;")}
         }}
     }}
 }}");
