@@ -8,7 +8,19 @@ Create directory, commands, queries in order to implement CQRS pattern
 dotnet tool install -g huiyuanai709.cqrs
 ```
 
+## Help
+
+```shell
+cqrs help
+```
+
 ## Usage
+
+> Create Application, Domain, Infrastructure and add this projects to specified sln. By default, it will traverse the folders and find the first sln
+
+```shell
+cqrs project --name Identity
+```
 
 > Create Directory
 
@@ -18,18 +30,18 @@ Resources/Commands/
 
 Resources/Queries/
 
-```C#
+```shell
 cqrs init
 ```
 
 > Create command, CommandHandler and optional return type
 
-```C#
+```shell
 cqrs command --name LoginCommand --type User
 ```
 
 > Create Query, QueryHandler and optional return type
 
-```C#
+```shell
 cqrs query --name UserQuery --type User
 ```

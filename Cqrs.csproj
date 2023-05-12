@@ -4,13 +4,13 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Version>1.0.5</Version>
+        <Version>1.0.6</Version>
         <Nullable>enable</Nullable>
         <PackageId>huiyuanai709.cqrs</PackageId>
         <Authors>huiyuanai709</Authors>
         <PackageTags>CQRS pattern tools</PackageTags>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/huiyuanai709/dotnet-tools</RepositoryUrl>
+        <RepositoryUrl>https://github.com/huiyuanai709/Cqrs</RepositoryUrl>
         <Description>create directory,commands,queries to implement CQRS pattern</Description>
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>cqrs</ToolCommandName>
