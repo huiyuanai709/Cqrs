@@ -92,6 +92,7 @@ namespace {ns}
             }
             catch
             {
+                // ignored
             }
             finally
             {

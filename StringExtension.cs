@@ -6,14 +6,12 @@ public static class StringExtension
 {
     public static string Repeat(this string str, int repeatNum)
     {
-        if (repeatNum == 0)
+        switch (repeatNum)
         {
-            return string.Empty;
-        }
-
-        if (repeatNum == 1)
-        {
-            return str;
+            case 0:
+                return string.Empty;
+            case 1:
+                return str;
         }
 
         var sb = new StringBuilder(str);

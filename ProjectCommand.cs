@@ -91,7 +91,7 @@ public class ProjectCommand : Command
     {
         foreach (var slnPath in slnPaths)
         {
-            Process process = new Process();
+            var process = new Process();
             process.StartInfo.FileName = "dotnet";
             process.StartInfo.Arguments =
                 $"sln {slnPath} add {applicationName}/{applicationName}.csproj {domainName}/{domainName}.csproj {infrastructure}/{infrastructure}.csproj";
